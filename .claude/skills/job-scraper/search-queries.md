@@ -1,70 +1,82 @@
 # Search Queries for Job Scraper
 
-<!-- SETUP: Customize these queries based on your skills, target roles, and location -->
+UK job market. Candidate: applied AI / agentic systems + 10 yrs CRM/martech delivery (Adobe Campaign, SFMC, Data Cloud).
 
 ## Search Sites
 
-Primary (Danish job market):
-- **jobindex.dk** - largest Danish job board
-- **linkedin.com/jobs** - LinkedIn job listings (filter: Denmark / your city)
-- **karriere.dk** - IDA's job board (engineering/science roles)
-- **jobfinder.dk** - another major Danish job board
-- **akademikernes.dk** - academic union job board
+Primary (UK job market):
+- **linkedin.com/jobs** - LinkedIn job listings (filter: London / United Kingdom)
+- **uk.indeed.com** - Indeed UK
+- **reed.co.uk** - Reed
+- **totaljobs.com** - Totaljobs
+- **cwjobs.co.uk** - CWJobs (tech roles)
+- **consultancy.uk/jobs** - consulting roles (Big 4, Capgemini, Accenture, etc.)
+- **otta.com / welcometothejungle.com** - startup / scale-up roles
 
-Secondary (company career pages via Google):
-- Direct Google searches with `site:` filters for known target companies
+Secondary (company career pages via search):
+- Consultancies: Capgemini Invent, Accenture, Deloitte, PwC, EY, KPMG, IBM Consulting, BCG X, McKinsey QuantumBlack, Publicis Sapient, Slalom, Thoughtworks
+- AI vendors / platforms: Anthropic, OpenAI, Google Cloud, Microsoft, Cohere, Mistral, Databricks, Snowflake, Salesforce (Agentforce), Adobe
 
 ## Query Categories
 
-Queries are grouped by priority. Each query should be combined with your location terms (e.g. "Copenhagen", "Sjælland", "Hovedstaden") where the site supports it.
+Combine with "London", "United Kingdom" or "remote UK" where the site supports it.
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
+### Priority 1: Agentic / Applied AI Engineering
 
-These match your strongest and most desired career direction.
-
-```
-site:jobindex.dk "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY]
-site:jobindex.dk "[YOUR_KEY_SKILL]" [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_COUNTRY]
-```
-
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
-
-These match your domain expertise.
+Any role building agentic systems, AI agents, LLM pipelines, evals.
 
 ```
-site:jobindex.dk [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] OR [YOUR_REGION]
-site:jobindex.dk [YOUR_DOMAIN_KEYWORD_2] [YOUR_COUNTRY]
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] [YOUR_COUNTRY]
+site:linkedin.com/jobs "agentic" engineer London
+site:linkedin.com/jobs "AI agents" engineer "United Kingdom"
+site:linkedin.com/jobs "Applied AI Engineer" London OR remote
+site:uk.indeed.com "agentic AI" engineer London
+site:cwjobs.co.uk "AI engineer" agents LLM
 ```
 
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
+### Priority 2: AI Consulting (Manager level)
 
-Adjacent roles you could pivot into.
-
-```
-site:jobindex.dk "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:jobindex.dk "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL] [YOUR_CITY]
-```
-
-### Priority 4: Broader Technical / Consulting
-
-Wider net for general technical roles.
+Data & AI / GenAI / agentic consulting at Manager / Senior Consultant grade.
 
 ```
-site:jobindex.dk [YOUR_KEY_SKILL] developer [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" [YOUR_CITY]
-site:jobindex.dk "technical consultant" [YOUR_DOMAIN] [YOUR_CITY]
+site:linkedin.com/jobs "AI Manager" consulting London agentic OR GenAI
+site:consultancy.uk/jobs "AI" Manager agentic OR "generative AI"
+"Capgemini Invent" OR Accenture OR Deloitte "agentic AI" Manager London job
+site:linkedin.com/jobs "GenAI consultant" OR "AI consultant" London
+```
+
+### Priority 3: AI Solutions Architect / Forward Deployed Engineer
+
+Client-facing technical roles at AI vendors and platforms.
+
+```
+site:linkedin.com/jobs "Forward Deployed Engineer" London
+site:linkedin.com/jobs "AI Solutions Architect" OR "Solutions Engineer" LLM London
+"Forward Deployed" OR "Solutions Architect" "applied AI" London careers
+```
+
+### Priority 4: AI in Martech / CRM
+
+AI for CRM, personalisation, customer engagement, marketing decisioning.
+
+```
+site:linkedin.com/jobs "Agentforce" OR "Salesforce AI" London
+site:linkedin.com/jobs "Adobe Experience Platform" AI OR agents London
+site:linkedin.com/jobs "AI" CRM personalisation "marketing technology" London
+site:uk.indeed.com "AI" martech OR "customer engagement" agents London
 ```
 
 ## Location Filter
 
-When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- [YOUR_CITY] and surrounding areas
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- [BORDERLINE_AREA] (borderline - ~X min by transit)
-- [TOO_FAR_AREA] (too far)
+Acceptable:
+- London (hybrid, up to ~3 days/week in office)
+- Fully remote, UK-based
+
+Borderline (flag, don't drop):
+- Hybrid outside London with low office days (e.g. Manchester/Glasgow base with London option)
+- Roles requiring frequent client-site travel
+
+Too far:
+- Non-UK roles, or UK roles requiring 4-5 days/week outside London
 
 ## Date Filter
 
@@ -73,4 +85,5 @@ Only include jobs posted within the last 14 days, or with an application deadlin
 ## Adapting Queries
 
 If the user specifies a focus area, select queries from the matching category and also generate 2-3 custom queries for that focus. For example:
-- "/scrape [focus_area]" -> relevant category queries + custom focus-specific queries
+- "/scrape consulting" -> Priority 2 queries + custom consulting queries
+- "/scrape fde" -> Priority 3 queries + custom forward-deployed queries
